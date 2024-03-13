@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Adivinanzas</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .question {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .options button {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #start, #reset, #restart {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #reset {
+            background-color: #f44336;
+        }
+        #restart {
+            background-color: green;
+            display: none;
+        }
+        #score {
+            margin-top: 20px;
+        }
+        #incorrect {
+            font-size: 0.8em;
+        }
+        .alternative {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adivinas?</h1>
+    <button id="start" onclick="startQuiz()">Comenzar Quiz</button>
+    <button id="restart" onclick="restartGame()" style="display: none;">Jugar de nuevo</button>
+    <button id="reset" onclick="resetQuiz()" style="display: none;">Resetear Quiz</button>
+    <div id="quiz" style="display: none;">
+        <div class="question" id="question">Pregunta</div>
+        <div class="options" id="options"></div>
+    </div>
+    <div id="result"></div>
+    <div id="score">Puntuación: <span id="userScore">0</span></div>
+    <div id="incorrect">Respuestas incorrectas: 0</div>
+    <div id="global-results">Resultados globales: 0, Respuestas correctas: 0, Respuestas incorrectas: 0</div>
+    <div id="time-taken"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
